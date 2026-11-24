@@ -4,6 +4,7 @@ import json
 import re
 import getpass
 import requests
+import os
 
 from datetime import datetime, date, time, timedelta
 from zoneinfo import ZoneInfo
@@ -12,7 +13,7 @@ from playwright.async_api import async_playwright
 
 # ODOO POSTAVKE
 BASE_URL = "http://localhost:8069/json/2"
-DATABASE = "erasmus"
+DATABASE = os.getenv("ODOO_DATABASE", "your_database")
 TIMEZONE = "Europe/Vienna"
 
 
